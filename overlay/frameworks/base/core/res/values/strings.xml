@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2026 TIBI624 -->
+<resources>
+    <!-- Default name of the device -->
+    <string name="config_deviceName">Samsung Galaxy A30</string>
+
+    <!-- Default manufacturer -->
+    <string name="config_deviceManufacturer">Samsung</string>
+</resources>

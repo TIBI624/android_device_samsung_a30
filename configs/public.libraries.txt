@@ -1,0 +1,11 @@
+libOpenCL.so
+libGLES_mali.so
+libexynoscamera.so
+libhdmiedid.so
+libstagefright_soft_vp8dec.so
+libstagefright_soft_vp9dec.so
+libstagefright_soft_h264dec.so
+libstagefright_soft_h264enc.so
+libstagefright_soft_hevcdec.so
+libstagefright_soft_mpeg4dec.so
+libstagefright_soft_mpeg4enc.so

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2026 TIBI624 -->
+<resources>
+    <bool name="config_enableNightMode">true</bool>
+    <bool name="config_keyguardShowBatteryStatus">true</bool>
+    <bool name="config_keyguardShowCameraAffordance">true</bool>
+</resources>

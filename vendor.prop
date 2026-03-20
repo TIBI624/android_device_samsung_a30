@@ -1,0 +1,85 @@
+#
+# Copyright (C) 2026 TIBI624
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+# Vendor System Properties for Samsung Galaxy A30
+
+# Hardware
+ro.hardware=exynos7885
+ro.hardware.camera=exynos7885
+ro.hardware.vulkan=mali
+
+# Display
+ro.bq.gpu_to_cpu_unsupported=1
+debug.sf.hw=1
+debug.egl.hw=1
+debug.composition.type=c2d
+persist.hwc.mdpcomp.enable=true
+
+# Audio
+ro.vendor.audio.sdk.fluencetype=fluence
+persist.vendor.audio.fluence.voicecall=true
+persist.vendor.audio.fluence.voicerec=false
+persist.vendor.audio.fluence.speaker=true
+
+# Camera
+persist.vendor.camera.physical.num=2
+vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera
+
+# Bluetooth
+vendor.bluetooth.soc= bcm
+vendor.bluetooth.device_type=0
+
+# WiFi
+ro.vendor.wifi.driver=bcmsdh
+ro.vendor.wifi.interface=wlan0
+
+# Sensors
+ro.vendor.sensors.enable=true
+
+# DRM
+drm.service.enabled=true
+
+# Media
+vendor.mm.enable.qcom_parser=3183219
+vendor.mm.enable.sec.smoothmotion=true
+
+# NFC
+ro.nfc.port=I2C
+
+# Fingerprint
+ro.fingerprint.sensor.position=back
+
+# Touch
+ro.touch.pressure=1.0
+
+# Power
+ro.vendor.power.profile=balanced
+
+# Thermal
+ro.thermal.profile=0
+
+# SELinux
+ro.boot.selinux=enforcing
+
+# VNDK
+ro.vndk.version=current
+
+# Treble
+ro.treble.enabled=true
+
+# Debug
+ro.debuggable=0
+persist.sys.disable_rescue=true

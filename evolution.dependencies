@@ -1,0 +1,20 @@
+[
+  {
+    "repository": "android_device_samsung_universal7885-common",
+    "target_path": "device/samsung/universal7885-common",
+    "remote": "eurekadevelopment",
+    "branch": "android-15"
+  },
+  {
+    "repository": "android_vendor_samsung_exynos7885",
+    "target_path": "vendor/samsung/universal7885-common",
+    "remote": "eurekadevelopment",
+    "branch": "android-15"
+  },
+  {
+    "repository": "android_vendor_samsung_a30",
+    "target_path": "vendor/samsung/a30",
+    "remote": "eurekadevelopment",
+    "branch": "android-15"
+  }
+]

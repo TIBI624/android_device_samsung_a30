@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2026 TIBI624 -->
+<!-- Framework Dimensions for Samsung Galaxy A30 -->
+<resources>
+    <!-- Screen dimensions -->
+    <dimen name="screen_width">1080px</dimen>
+    <dimen name="screen_height">2340px</dimen>
+
+    <!-- Status bar -->
+    <dimen name="status_bar_height">24dp</dimen>
+    <dimen name="status_bar_height_portrait">24dp</dimen>
+    <dimen name="status_bar_height_landscape">24dp</dimen>
+    <dimen name="status_bar_padding_top">0dp</dimen>
+    <dimen name="status_bar_padding_start">0dp</dimen>
+    <dimen name="status_bar_padding_end">0dp</dimen>
+
+    <!-- Navigation bar -->
+    <dimen name="navigation_bar_height">48dp</dimen>
+    <dimen name="navigation_bar_height_landscape">48dp</dimen>
+    <dimen name="navigation_bar_width">0dp</dimen>
+    <dimen name="navigation_bar_frame_height">0dp</dimen>
+
+    <!-- Button dimensions -->
+    <dimen name="button_height">48dp</dimen>
+    <dimen name="button_width">100dp</dimen>
+    <dimen name="button_padding">16dp</dimen>
+
+    <!-- Dialog dimensions -->
+    <dimen name="dialog_min_width_major">65%</dimen>
+    <dimen name="dialog_min_width_minor">95%</dimen>
+    <dimen name="dialog_preferred_padding">24dp</dimen>
+
+    <!-- List items -->
+    <dimen name="list_item_height">48dp</dimen>
+    <dimen name="list_item_padding">16dp</dimen>
+
+    <!-- Text sizes -->
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_normal">14sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_xlarge">24sp</dimen>
+
+    <!-- Icon sizes -->
+    <dimen name="icon_size_small">24dp</dimen>
+    <dimen name="icon_size_normal">48dp</dimen>
+    <dimen name="icon_size_large">72dp</dimen>
+
+    <!-- App widget -->
+    <dimen name="app_widget_min_width">40dp</dimen>    <dimen name="app_widget_min_height">40dp</dimen>
+    <dimen name="app_widget_resize_margin">8dp</dimen>
+
+    <!-- Scrollbar -->
+    <dimen name="scrollbar_size">4dp</dimen>
+    <dimen name="scrollbar_thumb_size">48dp</dimen>
+
+    <!-- Divider -->
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="divider_padding">16dp</dimen>
+
+    <!-- Card -->
+    <dimen name="card_corner_radius">8dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+    <dimen name="card_padding">16dp</dimen>
+
+    <!-- Snackbar -->
+    <dimen name="snackbar_height">48dp</dimen>
+    <dimen name="snackbar_padding">16dp</dimen>
+    <dimen name="snackbar_margin">8dp</dimen>
+
+    <!-- Tooltip -->
+    <dimen name="tooltip_corner_radius">4dp</dimen>
+    <dimen name="tooltip_padding">8dp</dimen>
+    <dimen name="tooltip_margin">16dp</dimen>
+
+    <!-- Progress bar -->
+    <dimen name="progress_bar_height">4dp</dimen>
+    <dimen name="progress_bar_width">200dp</dimen>
+    <dimen name="progress_bar_corner_radius">2dp</dimen>
+
+    <!-- Seek bar -->
+    <dimen name="seek_bar_height">24dp</dimen>
+    <dimen name="seek_bar_thumb_size">12dp</dimen>
+
+    <!-- Switch -->
+    <dimen name="switch_height">32dp</dimen>
+    <dimen name="switch_width">52dp</dimen>
+    <dimen name="switch_thumb_size">20dp</dimen>
+
+    <!-- Checkbox -->
+    <dimen name="checkbox_size">24dp</dimen>
+    <dimen name="checkbox_padding">8dp</dimen>
+
+    <!-- Radio button -->
+    <dimen name="radio_button_size">24dp</dimen>
+    <dimen name="radio_button_padding">8dp</dimen>
+
+    <!-- Spinner -->
+    <dimen name="spinner_height">48dp</dimen>    <dimen name="spinner_padding">16dp</dimen>
+
+    <!-- EditText -->
+    <dimen name="edit_text_height">48dp</dimen>
+    <dimen name="edit_text_padding">16dp</dimen>
+    <dimen name="edit_text_corner_radius">4dp</dimen>
+
+    <!-- ImageView -->
+    <dimen name="image_view_size">48dp</dimen>
+    <dimen name="image_view_padding">8dp</dimen>
+
+    <!-- TextView -->
+    <dimen name="text_view_padding">16dp</dimen>
+    <dimen name="text_view_line_spacing">4dp</dimen>
+
+    <!-- RecyclerView -->
+    <dimen name="recycler_view_padding">0dp</dimen>
+    <dimen name="recycler_view_margin">8dp</dimen>
+
+    <!-- CoordinatorLayout -->
+    <dimen name="coordinator_layout_padding">0dp</dimen>
+    <dimen name="coordinator_layout_margin">0dp</dimen>
+
+    <!-- AppBarLayout -->
+    <dimen name="app_bar_layout_height">56dp</dimen>
+    <dimen name="app_bar_layout_elevation">4dp</dimen>
+
+    <!-- CollapsingToolbarLayout -->
+    <dimen name="collapsing_toolbar_layout_height">200dp</dimen>
+    <dimen name="collapsing_toolbar_layout_scrim_height">40dp</dimen>
+
+    <!-- BottomNavigationView -->
+    <dimen name="bottom_navigation_view_height">56dp</dimen>
+    <dimen name="bottom_navigation_view_icon_size">24dp</dimen>
+    <dimen name="bottom_navigation_view_text_size">12sp</dimen>
+
+    <!-- TabLayout -->
+    <dimen name="tab_layout_height">48dp</dimen>
+    <dimen name="tab_layout_padding">16dp</dimen>
+    <dimen name="tab_layout_text_size">14sp</dimen>
+
+    <!-- ViewPager -->
+    <dimen name="view_pager_padding">0dp</dimen>
+    <dimen name="view_pager_margin">8dp</dimen>
+
+    <!-- DrawerLayout -->
+    <dimen name="drawer_layout_width">280dp</dimen>
+    <dimen name="drawer_layout_margin">0dp</dimen>
+
+    <!-- FloatingActionButton -->    <dimen name="floating_action_button_size">56dp</dimen>
+    <dimen name="floating_action_button_margin">16dp</dimen>
+    <dimen name="floating_action_button_elevation">6dp</dimen>
+
+    <!-- Menu -->
+    <dimen name="menu_item_height">48dp</dimen>
+    <dimen name="menu_item_padding">16dp</dimen>
+    <dimen name="menu_item_icon_size">24dp</dimen>
+
+    <!-- Popup -->
+    <dimen name="popup_corner_radius">8dp</dimen>
+    <dimen name="popup_elevation">8dp</dimen>
+    <dimen name="popup_padding">16dp</dimen>
+
+    <!-- Toast -->
+    <dimen name="toast_corner_radius">8dp</dimen>
+    <dimen name="toast_padding">16dp</dimen>
+    <dimen name="toast_margin">32dp</dimen>
+
+    <!-- Notification -->
+    <dimen name="notification_height">64dp</dimen>
+    <dimen name="notification_padding">16dp</dimen>
+    <dimen name="notification_icon_size">24dp</dimen>
+    <dimen name="notification_text_size">14sp</dimen>
+
+    <!-- Lockscreen -->
+    <dimen name="lockscreen_clock_size">60sp</dimen>
+    <dimen name="lockscreen_clock_padding">16dp</dimen>
+    <dimen name="lockscreen_shortcut_size">48dp</dimen>
+    <dimen name="lockscreen_user_image_size">80dp</dimen>
+
+    <!-- Keyguard -->
+    <dimen name="keyguard_indication_size">12sp</dimen>
+    <dimen name="keyguard_security_height">300dp</dimen>
+    <dimen name="keyguard_security_width">300dp</dimen>
+
+    <!-- Always on display -->
+    <dimen name="always_on_display_brightness">100</dimen>
+    <dimen name="always_on_display_offset_x">0dp</dimen>
+    <dimen name="always_on_display_offset_y">0dp</dimen>
+
+    <!-- Display cutout -->
+    <dimen name="display_cutout_width">0dp</dimen>
+    <dimen name="display_cutout_height">0dp</dimen>
+    <dimen name="display_cutout_margin">0dp</dimen>
+
+    <!-- Rounded corners -->
+    <dimen name="rounded_corner_radius">0dp</dimen>
+    <dimen name="rounded_corner_radius_top">0dp</dimen>
+    <dimen name="rounded_corner_radius_bottom">0dp</dimen>
+    <!-- Safe insets -->
+    <dimen name="safe_inset_left">0dp</dimen>
+    <dimen name="safe_inset_right">0dp</dimen>
+    <dimen name="safe_inset_top">24dp</dimen>
+    <dimen name="safe_inset_bottom">48dp</dimen>
+
+    <!-- System gestures -->
+    <dimen name="gesture_area_width">100dp</dimen>
+    <dimen name="gesture_area_height">100dp</dimen>
+    <dimen name="gesture_sensitivity">0.5</dimen>
+
+    <!-- Haptic feedback -->
+    <dimen name="haptic_feedback_strength">100</dimen>
+    <dimen name="haptic_feedback_duration">10ms</dimen>
+
+    <!-- Animation -->
+    <dimen name="animation_duration_short">150ms</dimen>
+    <dimen name="animation_duration_normal">300ms</dimen>
+    <dimen name="animation_duration_long">500ms</dimen>
+
+    <!-- Transition -->
+    <dimen name="transition_duration_short">150ms</dimen>
+    <dimen name="transition_duration_normal">300ms</dimen>
+    <dimen name="transition_duration_long">500ms</dimen>
+
+    <!-- Interpolator -->
+    <dimen name="interpolator_accelerate">1.0</dimen>
+    <dimen name="interpolator_decelerate">1.0</dimen>
+    <dimen name="interpolator_accelerate_decelerate">1.0</dimen>
+
+    <!-- Elevation -->
+    <dimen name="elevation_low">1dp</dimen>
+    <dimen name="elevation_medium">2dp</dimen>
+    <dimen name="elevation_high">4dp</dimen>
+    <dimen name="elevation_overlay">6dp</dimen>
+
+    <!-- Shadow -->
+    <dimen name="shadow_radius">4dp</dimen>
+    <dimen name="shadow_offset_x">0dp</dimen>
+    <dimen name="shadow_offset_y">2dp</dimen>
+
+    <!-- Blur -->
+    <dimen name="blur_radius">0dp</dimen>
+    <dimen name="blur_sigma">0</dimen>
+
+    <!-- Opacity -->
+    <dimen name="opacity_disabled">0.5</dimen>
+    <dimen name="opacity_enabled">1.0</dimen>
+    <!-- Scale -->
+    <dimen name="scale_small">0.8</dimen>
+    <dimen name="scale_normal">1.0</dimen>
+    <dimen name="scale_large">1.2</dimen>
+
+    <!-- Rotation -->
+    <dimen name="rotation_90">90deg</dimen>
+    <dimen name="rotation_180">180deg</dimen>
+    <dimen name="rotation_270">270deg</dimen>
+
+    <!-- Margin -->
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_normal">16dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+    <dimen name="margin_xlarge">32dp</dimen>
+
+    <!-- Padding -->
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_normal">16dp</dimen>
+    <dimen name="padding_large">24dp</dimen>
+    <dimen name="padding_xlarge">32dp</dimen>
+
+    <!-- Spacing -->
+    <dimen name="spacing_small">4dp</dimen>
+    <dimen name="spacing_normal">8dp</dimen>
+    <dimen name="spacing_large">16dp</dimen>
+    <dimen name="spacing_xlarge">24dp</dimen>
+
+    <!-- Grid -->
+    <dimen name="grid_column_width">100dp</dimen>
+    <dimen name="grid_row_height">100dp</dimen>
+    <dimen name="grid_spacing">8dp</dimen>
+
+    <!-- List -->
+    <dimen name="list_header_height">48dp</dimen>
+    <dimen name="list_footer_height">48dp</dimen>
+    <dimen name="list_divider_height">1dp</dimen>
+
+    <!-- Grid view -->
+    <dimen name="grid_view_column_width">100dp</dimen>
+    <dimen name="grid_view_row_height">100dp</dimen>
+    <dimen name="grid_view_spacing">8dp</dimen>
+
+    <!-- Stack view -->
+    <dimen name="stack_view_child_width">300dp</dimen>
+    <dimen name="stack_view_child_height">400dp</dimen>
+    <dimen name="stack_view_spacing">8dp</dimen>
+
+    <!-- View flipper -->
+    <dimen name="view_flipper_width">300dp</dimen>    <dimen name="view_flipper_height">400dp</dimen>
+
+    <!-- Adapter view -->
+    <dimen name="adapter_view_width">match_parent</dimen>
+    <dimen name="adapter_view_height">wrap_content</dimen>
+
+    <!-- Scroll view -->
+    <dimen name="scroll_view_width">match_parent</dimen>
+    <dimen name="scroll_view_height">match_parent</dimen>
+
+    <!-- Horizontal scroll view -->
+    <dimen name="horizontal_scroll_view_width">match_parent</dimen>
+    <dimen name="horizontal_scroll_view_height">wrap_content</dimen>
+
+    <!-- Nested scroll view -->
+    <dimen name="nested_scroll_view_width">match_parent</dimen>
+    <dimen name="nested_scroll_view_height">match_parent</dimen>
+
+    <!-- Web view -->
+    <dimen name="web_view_width">match_parent</dimen>
+    <dimen name="web_view_height">match_parent</dimen>
+
+    <!-- Texture view -->
+    <dimen name="texture_view_width">match_parent</dimen>
+    <dimen name="texture_view_height">match_parent</dimen>
+
+    <!-- Surface view -->
+    <dimen name="surface_view_width">match_parent</dimen>
+    <dimen name="surface_view_height">match_parent</dimen>
+
+    <!-- GL surface view -->
+    <dimen name="gl_surface_view_width">match_parent</dimen>
+    <dimen name="gl_surface_view_height">match_parent</dimen>
+
+    <!-- Video view -->
+    <dimen name="video_view_width">match_parent</dimen>
+    <dimen name="video_view_height">wrap_content</dimen>
+
+    <!-- Media controller -->
+    <dimen name="media_controller_height">48dp</dimen>
+    <dimen name="media_controller_padding">16dp</dimen>
+
+    <!-- Search view -->
+    <dimen name="search_view_height">48dp</dimen>
+    <dimen name="search_view_padding">16dp</dimen>
+
+    <!-- Action bar -->
+    <dimen name="action_bar_height">56dp</dimen>
+    <dimen name="action_bar_icon_size">24dp</dimen>
+    <dimen name="action_bar_title_size">18sp</dimen>    <dimen name="action_bar_subtitle_size">14sp</dimen>
+
+    <!-- Toolbar -->
+    <dimen name="toolbar_height">56dp</dimen>
+    <dimen name="toolbar_padding">16dp</dimen>
+    <dimen name="toolbar_title_size">18sp</dimen>
+    <dimen name="toolbar_subtitle_size">14sp</dimen>
+
+    <!-- Action mode -->
+    <dimen name="action_mode_height">56dp</dimen>
+    <dimen name="action_mode_padding">16dp</dimen>
+
+    <!-- Context bar -->
+    <dimen name="context_bar_height">48dp</dimen>
+    <dimen name="context_bar_padding">16dp</dimen>
+
+    <!-- Immersive mode -->
+    <dimen name="immersive_mode_offset">0dp</dimen>
+
+    <!-- System UI visibility -->
+    <dimen name="system_ui_visibility">0</dimen>
+
+    <!-- Window -->
+    <dimen name="window_width">match_parent</dimen>
+    <dimen name="window_height">match_parent</dimen>
+    <dimen name="window_frame_width">0dp</dimen>
+
+    <!-- Activity -->
+    <dimen name="activity_width">match_parent</dimen>
+    <dimen name="activity_height">match_parent</dimen>
+
+    <!-- Fragment -->
+    <dimen name="fragment_width">match_parent</dimen>
+    <dimen name="fragment_height">match_parent</dimen>
+
+    <!-- Dialog fragment -->
+    <dimen name="dialog_fragment_width">300dp</dimen>
+    <dimen name="dialog_fragment_height">wrap_content</dimen>
+
+    <!-- Bottom sheet -->
+    <dimen name="bottom_sheet_height">300dp</dimen>
+    <dimen name="bottom_sheet_corner_radius">16dp</dimen>
+
+    <!-- Bottom sheet dialog -->
+    <dimen name="bottom_sheet_dialog_height">wrap_content</dimen>
+    <dimen name="bottom_sheet_dialog_corner_radius">16dp</dimen>
+
+    <!-- Full screen dialog -->
+    <dimen name="full_screen_dialog_width">match_parent</dimen>
+    <dimen name="full_screen_dialog_height">match_parent</dimen>
+    <!-- Preference -->
+    <dimen name="preference_height">48dp</dimen>
+    <dimen name="preference_padding">16dp</dimen>
+    <dimen name="preference_icon_size">24dp</dimen>
+
+    <!-- Preference category -->
+    <dimen name="preference_category_height">40dp</dimen>
+    <dimen name="preference_category_padding">16dp</dimen>
+
+    <!-- Preference screen -->
+    <dimen name="preference_screen_padding">0dp</dimen>
+    <dimen name="preference_screen_margin">0dp</dimen>
+
+    <!-- Switch preference -->
+    <dimen name="switch_preference_height">56dp</dimen>
+    <dimen name="switch_preference_padding">16dp</dimen>
+
+    <!-- List preference -->
+    <dimen name="list_preference_height">48dp</dimen>
+    <dimen name="list_preference_padding">16dp</dimen>
+
+    <!-- Edit text preference -->
+    <dimen name="edit_text_preference_height">48dp</dimen>
+    <dimen name="edit_text_preference_padding">16dp</dimen>
+
+    <!-- Seek bar preference -->
+    <dimen name="seek_bar_preference_height">72dp</dimen>
+    <dimen name="seek_bar_preference_padding">16dp</dimen>
+
+    <!-- Slider preference -->
+    <dimen name="slider_preference_height">72dp</dimen>
+    <dimen name="slider_preference_padding">16dp</dimen>
+
+    <!-- Color preference -->
+    <dimen name="color_preference_size">48dp</dimen>
+    <dimen name="color_preference_padding">16dp</dimen>
+
+    <!-- Image preference -->
+    <dimen name="image_preference_size">48dp</dimen>
+    <dimen name="image_preference_padding">16dp</dimen>
+
+    <!-- Layout preference -->
+    <dimen name="layout_preference_width">match_parent</dimen>
+    <dimen name="layout_preference_height">wrap_content</dimen>
+
+    <!-- Preference widget -->
+    <dimen name="preference_widget_width">48dp</dimen>
+    <dimen name="preference_widget_height">48dp</dimen>
+    <!-- Preference summary -->
+    <dimen name="preference_summary_size">12sp</dimen>
+    <dimen name="preference_summary_padding">4dp</dimen>
+
+    <!-- Preference title -->
+    <dimen name="preference_title_size">16sp</dimen>
+    <dimen name="preference_title_padding">4dp</dimen>
+
+    <!-- Preference icon -->
+    <dimen name="preference_icon_width">24dp</dimen>
+    <dimen name="preference_icon_height">24dp</dimen>
+
+    <!-- Preference divider -->
+    <dimen name="preference_divider_height">1dp</dimen>
+    <dimen name="preference_divider_padding">16dp</dimen>
+
+    <!-- Preference header -->
+    <dimen name="preference_header_height">48dp</dimen>
+    <dimen name="preference_header_padding">16dp</dimen>
+
+    <!-- Preference footer -->
+    <dimen name="preference_footer_height">48dp</dimen>
+    <dimen name="preference_footer_padding">16dp</dimen>
+</resources>

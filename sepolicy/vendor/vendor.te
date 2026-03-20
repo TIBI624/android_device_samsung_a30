@@ -1,0 +1,10 @@
+# Vendor SELinux policy
+# Copyright (C) 2026 TIBI624
+
+# Allow vendor processes to access hardware
+allow hal_camera_default device_a30_file:file { read write open };
+allow hal_audio_default device_a30_file:file { read write open };
+allow hal_bluetooth_default device_a30_file:file { read write open };
+
+# Allow vendor to access properties
+allow vendor_init vendor_a30_file:file { read write open };

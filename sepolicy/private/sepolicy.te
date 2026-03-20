@@ -1,0 +1,9 @@
+# Private SELinux policy
+# Copyright (C) 2026 TIBI624
+
+# Allow init to access device specific files
+allow init device_a30_file:file { read write open };
+allow init vendor_a30_file:file { read write open };
+
+# Allow system server to access device properties
+allow system_server device_a30_file:file { read open };

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2026 TIBI624 -->
+<resources>
+    <bool name="config_show_battery_saver">true</bool>
+    <bool name="config_show_device_info">true</bool>
+    <bool name="config_show_fingerprint_enroll">true</bool>
+    <bool name="config_show_face_enroll">true</bool>
+</resources>

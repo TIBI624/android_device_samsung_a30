@@ -1,0 +1,5 @@
+# SELinux policy for file contexts
+# Copyright (C) 2026 TIBI624
+
+type device_a30_file, file_type;
+type vendor_a30_file, file_type;

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2026 TIBI624 -->
+<mixer>
+    <ctl name="Master Playback Volume" value="31"/>
+    <ctl name="Master Playback Switch" value="1"/>
+    <ctl name="Headphone Playback Volume" value="25"/>
+    <ctl name="Headphone Playback Switch" value="1"/>
+    <ctl name="Speaker Playback Volume" value="25"/>
+    <ctl name="Speaker Playback Switch" value="1"/>
+    <ctl name="Mic Capture Volume" value="25"/>
+    <ctl name="Mic Capture Switch" value="1"/>
+    
+    <path name="speaker">
+        <ctl name="Speaker Playback Switch" value="1"/>
+    </path>
+    
+    <path name="headphone">
+        <ctl name="Headphone Playback Switch" value="1"/>
+    </path>
+    
+    <path name="earpiece">
+        <ctl name="Earpiece Playback Switch" value="1"/>
+    </path>
+    
+    <path name="main-mic">
+        <ctl name="Mic Capture Switch" value="1"/>
+    </path>
+    
+    <path name="voice-call">
+        <ctl name="Voice Call Switch" value="1"/>
+    </path>
+</mixer>

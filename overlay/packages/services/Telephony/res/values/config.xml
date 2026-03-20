@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2026 TIBI624 -->
+<resources>
+    <bool name="allow_emergency_numbers_without_call_state">true</bool>
+    <bool name="support_conference_call">true</bool>
+    <bool name="support_downgrade_vt_to_audio">true</bool>
+</resources>

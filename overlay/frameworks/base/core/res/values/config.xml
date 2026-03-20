@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2025 TIBI624 -->
+<!-- Framework Config for Samsung Galaxy A30 -->
+<resources>
+    <!-- Flag indicating whether the we should enable the automatic brightness in Settings. -->
+    <bool name="config_automatic_brightness_available">true</bool>
+
+    <!-- Array of light sensor LUX values for our auto brightness configuration -->
+    <integer-array name="config_autoBrightnessLevels">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>8</item>
+        <item>12</item>
+        <item>20</item>
+        <item>33</item>
+        <item>55</item>
+        <item>90</item>
+        <item>148</item>
+        <item>245</item>
+        <item>403</item>
+        <item>665</item>
+        <item>1097</item>
+        <item>1808</item>
+        <item>2981</item>
+        <item>5000</item>
+        <item>10000</item>
+    </integer-array>
+
+    <!-- Array of desired screen brightness in nits -->
+    <integer-array name="config_autoBrightnessLcdBacklightValues">
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>3</item>
+        <item>8</item>
+        <item>14</item>
+        <item>20</item>
+        <item>26</item>
+        <item>34</item>
+        <item>42</item>
+        <item>51</item>
+        <item>62</item>
+        <item>77</item>
+        <item>97</item>
+        <item>125</item>
+        <item>162</item>
+        <item>208</item>
+        <item>255</item>        <item>255</item>
+        <item>255</item>
+    </integer-array>
+
+    <!-- Minimum screen brightness allowed by the power manager -->
+    <integer name="config_screenBrightnessDim">6</integer>
+
+    <!-- Minimum screen brightness setting allowed by the power manager -->
+    <integer name="config_screenBrightnessSettingMinimum">1</integer>
+
+    <!-- Maximum screen brightness setting allowed by the power manager -->
+    <integer name="config_screenBrightnessSettingMaximum">255</integer>
+
+    <!-- Default screen brightness setting -->
+    <integer name="config_screenBrightnessSettingDefault">102</integer>
+
+    <!-- Screen brightness used to dim the screen while dozing -->
+    <integer name="config_screenBrightnessDoze">17</integer>
+
+    <!-- True if the display hardware only has brightness buckets rather than a full range of backlight values -->
+    <bool name="config_displayBrightnessBucketsInDoze">true</bool>
+
+    <!-- Whether the always on display mode is available -->
+    <bool name="config_dozeAlwaysOnDisplayAvailable">false</bool>
+
+    <!-- Control whether the always on display mode is enabled by default -->
+    <bool name="config_dozeAlwaysOnEnabled">false</bool>
+
+    <!-- If true, the display will be shifted around in ambient mode -->
+    <bool name="config_enableBurnInProtection">true</bool>
+
+    <!-- Whether device supports double tap to wake -->
+    <bool name="config_supportDoubleTapWake">true</bool>
+
+    <!-- Whether device supports camera gesture to launch -->
+    <bool name="config_enableCameraGesture">true</bool>
+
+    <!-- Whether device has a notch -->
+    <bool name="config_haveNotch">false</bool>
+
+    <!-- Whether device has rounded corners -->
+    <bool name="config_hasRoundedCorners">false</bool>
+
+    <!-- Whether a software navigation bar should be shown -->
+    <bool name="config_showNavigationBar">true</bool>
+
+    <!-- Whether WiFi display is supported by this device -->
+    <bool name="config_enableWifiDisplay">true</bool>
+
+    <!-- Whether to enable network location overlay -->    <bool name="config_networkLocationOverlay">true</bool>
+
+    <!-- Whether to enable fused location provider overlay -->
+    <bool name="config_fusedLocationProviderOverlay">true</bool>
+
+    <!-- Whether to enable geocoder location provider overlay -->
+    <bool name="config_geocoderProviderOverlay">true</bool>
+
+    <!-- Whether to enable vibration -->
+    <bool name="config_vibration_supported">true</bool>
+
+    <!-- Whether to enable fingerprint sensor -->
+    <bool name="config_fingerprintAvailable">true</bool>
+
+    <!-- Whether to enable face unlock -->
+    <bool name="config_faceUnlockSupported">true</bool>
+
+    <!-- Whether to enable NFC -->
+    <bool name="config_nfcAvailable">true</bool>
+
+    <!-- Whether to enable audio jack -->
+    <bool name="config_audioJackSupported">true</bool>
+
+    <!-- Whether to enable fast charging -->
+    <bool name="config_fastChargingSupported">true</bool>
+
+    <!-- Whether to enable USB OTG -->
+    <bool name="config_usbOtgSupported">true</bool>
+
+    <!-- Whether device needs to wait for Qualcomm MPCTL service to start -->
+    <bool name="config_waitForMpctl">false</bool>
+
+    <!-- Whether WiFi display is supported by this device -->
+    <bool name="config_enableWifiDisplay">true</bool>
+
+    <!-- Whether to enable camera sound -->
+    <bool name="config_camera_sound_forced">true</bool>
+
+    <!-- Whether to enable safe media volume -->
+    <bool name="config_safe_media_volume_enabled">true</bool>
+
+    <!-- Whether to enable cell broadcast service -->
+    <bool name="config_cellBroadcastAppLinks">true</bool>
+
+    <!-- Whether to enable SMS short code handling -->
+    <bool name="config_sms_short_codes">true</bool>
+
+    <!-- Whether to enable MMS -->
+    <bool name="config_enableMms">true</bool>
+    <!-- Whether to enable Bluetooth -->
+    <bool name="config_bluetooth_le_peripheral_mode_supported">true</bool>
+
+    <!-- Whether to enable audio output -->
+    <bool name="config_useFixedVolume">false</bool>
+
+    <!-- Whether to enable proximity sensor -->
+    <bool name="config_proximitySensorOnHead">true</bool>
+
+    <!-- Whether to enable accelerometer -->
+    <bool name="config_accelerometerAvailable">true</bool>
+
+    <!-- Whether to enable gyroscope -->
+    <bool name="config_gyroscopeAvailable">true</bool>
+
+    <!-- Whether to enable magnetometer -->
+    <bool name="config_magnetometerAvailable">true</bool>
+
+    <!-- Whether to enable light sensor -->
+    <bool name="config_lightSensorAvailable">true</bool>
+
+    <!-- Whether to enable barometer -->
+    <bool name="config_barometerAvailable">false</bool>
+
+    <!-- Whether to enable thermometer -->
+    <bool name="config_thermometerAvailable">false</bool>
+
+    <!-- Whether to enable heart rate monitor -->
+    <bool name="config_heartRateSensorAvailable">false</bool>
+
+    <!-- Whether to enable iris scanner -->
+    <bool name="config_irisScannerAvailable">false</bool>
+
+    <!-- Whether to enable wireless charging -->
+    <bool name="config_wirelessChargingSupported">false</bool>
+
+    <!-- Whether to enable HDMI output -->
+    <bool name="config_hdmiOutputSupported">false</bool>
+
+    <!-- Whether to enable display port -->
+    <bool name="config_displayPortSupported">false</bool>
+
+    <!-- Whether to enable stereo speakers -->
+    <bool name="config_stereoSpeakers">false</bool>
+
+    <!-- Whether to enable headphone detection -->
+    <bool name="config_headphoneDetectionSupported">true</bool>
+
+    <!-- Whether to enable USB audio accessory -->
+    <bool name="config_usbAudioAccessorySupported">true</bool>
+    <!-- Whether to enable Bluetooth audio -->
+    <bool name="config_bluetoothAudioSupported">true</bool>
+
+    <!-- Whether to enable WiFi audio -->
+    <bool name="config_wifiAudioSupported">true</bool>
+
+    <!-- Whether to enable screen recording -->
+    <bool name="config_screenRecordSupported">true</bool>
+
+    <!-- Whether to enable screen capture -->
+    <bool name="config_screenCaptureSupported">true</bool>
+
+    <!-- Whether to enable screenshot -->
+    <bool name="config_screenshotSupported">true</bool>
+
+    <!-- Whether to enable split screen -->
+    <bool name="config_splitScreenSupported">true</bool>
+
+    <!-- Whether to enable freeform windows -->
+    <bool name="config_freeformWindowsSupported">true</bool>
+
+    <!-- Whether to enable picture in picture -->
+    <bool name="config_pictureInPictureSupported">true</bool>
+
+    <!-- Whether to enable multi window -->
+    <bool name="config_multiWindowSupported">true</bool>
+
+    <!-- Whether to enable desktop mode -->
+    <bool name="config_desktopModeSupported">false</bool>
+
+    <!-- Whether to enable game mode -->
+    <bool name="config_gameModeSupported">true</bool>
+
+    <!-- Whether to enable performance mode -->
+    <bool name="config_performanceModeSupported">true</bool>
+
+    <!-- Whether to enable power save mode -->
+    <bool name="config_powerSaveModeSupported">true</bool>
+
+    <!-- Whether to enable battery saver -->
+    <bool name="config_batterySaverSupported">true</bool>
+
+    <!-- Whether to enable adaptive battery -->
+    <bool name="config_adaptiveBatterySupported">true</bool>
+
+    <!-- Whether to enable adaptive brightness -->
+    <bool name="config_adaptiveBrightnessSupported">true</bool>
+
+    <!-- Whether to enable adaptive connectivity -->    <bool name="config_adaptiveConnectivitySupported">true</bool>
+
+    <!-- Whether to enable digital well being -->
+    <bool name="config_digitalWellbeingSupported">true</bool>
+
+    <!-- Whether to enable parental controls -->
+    <bool name="config_parentalControlsSupported">true</bool>
+
+    <!-- Whether to enable focus mode -->
+    <bool name="config_focusModeSupported">true</bool>
+
+    <!-- Whether to enable bedtime mode -->
+    <bool name="config_bedtimeModeSupported">true</bool>
+
+    <!-- Whether to enable wind down -->
+    <bool name="config_windDownSupported">true</bool>
+
+    <!-- Whether to enable grayscale -->
+    <bool name="config_grayscaleSupported">true</bool>
+
+    <!-- Whether to enable dark mode -->
+    <bool name="config_darkModeSupported">true</bool>
+
+    <!-- Whether to enable night light -->
+    <bool name="config_nightLightSupported">true</bool>
+
+    <!-- Whether to enable eye comfort -->
+    <bool name="config_eyeComfortSupported">true</bool>
+
+    <!-- Whether to enable reading mode -->
+    <bool name="config_readingModeSupported">true</bool>
+
+    <!-- Whether to enable one handed mode -->
+    <bool name="config_oneHandedModeSupported">true</bool>
+
+    <!-- Whether to enable glove mode -->
+    <bool name="config_gloveModeSupported">false</bool>
+
+    <!-- Whether to enable wet mode -->
+    <bool name="config_wetModeSupported">false</bool>
+
+    <!-- Whether to enable pocket mode -->
+    <bool name="config_pocketModeSupported">true</bool>
+
+    <!-- Whether to enable lift to wake -->
+    <bool name="config_liftToWakeSupported">true</bool>
+
+    <!-- Whether to enable tap to wake -->
+    <bool name="config_tapToWakeSupported">true</bool>
+    <!-- Whether to enable double tap to sleep -->
+    <bool name="config_doubleTapToSleepSupported">true</bool>
+
+    <!-- Whether to enable swipe to unlock -->
+    <bool name="config_swipeToUnlockSupported">true</bool>
+
+    <!-- Whether to enable slide to unlock -->
+    <bool name="config_slideToUnlockSupported">true</bool>
+
+    <!-- Whether to enable pattern unlock -->
+    <bool name="config_patternUnlockSupported">true</bool>
+
+    <!-- Whether to enable PIN unlock -->
+    <bool name="config_pinUnlockSupported">true</bool>
+
+    <!-- Whether to enable password unlock -->
+    <bool name="config_passwordUnlockSupported">true</bool>
+
+    <!-- Whether to enable biometric unlock -->
+    <bool name="config_biometricUnlockSupported">true</bool>
+
+    <!-- Whether to enable smart lock -->
+    <bool name="config_smartLockSupported">true</bool>
+
+    <!-- Whether to enable trusted places -->
+    <bool name="config_trustedPlacesSupported">true</bool>
+
+    <!-- Whether to enable trusted devices -->
+    <bool name="config_trustedDevicesSupported">true</bool>
+
+    <!-- Whether to enable on body detection -->
+    <bool name="config_onBodyDetectionSupported">true</bool>
+
+    <!-- Whether to enable voice unlock -->
+    <bool name="config_voiceUnlockSupported">false</bool>
+
+    <!-- Whether to enable iris unlock -->
+    <bool name="config_irisUnlockSupported">false</bool>
+
+    <!-- Whether to enable fingerprint unlock -->
+    <bool name="config_fingerprintUnlockSupported">true</bool>
+
+    <!-- Hardware keys -->
+    <bool name="config_supportsHomeButton">false</bool>
+    <bool name="config_supportsBackButton">true</bool>
+    <bool name="config_supportsRecentButton">false</bool>
+    <bool name="config_supportsMenuButton">false</bool>
+    <bool name="config_supportsSearchButton">false</bool>
+
+    <!-- Power button -->    <bool name="config_powerButtonWakeEnabled">true</bool>
+    <bool name="config_powerButtonSleepEnabled">true</bool>
+    <bool name="config_powerButtonTorchesEnabled">true</bool>
+
+    <!-- Volume buttons -->
+    <bool name="config_volumeWakeScreenEnabled">true</bool>
+    <bool name="config_volumeLongPressOnPowerEnabled">true</bool>
+    <bool name="config_volumeAnswerCallEnabled">true</bool>
+
+    <!-- Camera buttons -->
+    <bool name="config_cameraLaunchGestureEnabled">true</bool>
+    <bool name="config_cameraDoubleTapPowerGestureEnabled">true</bool>
+
+    <!-- Navigation bar -->
+    <bool name="config_navBarDisappearsWhenNotNeeded">true</bool>
+    <bool name="config_navBarAlwaysVisibleOnSideOfDisplay">false</bool>
+
+    <!-- Battery LED -->
+    <bool name="config_batterySaverAvailable">true</bool>
+    <bool name="config_ledAvailable">false</bool>
+
+    <!-- Charging -->
+    <bool name="config_chargingSoundsEnabled">true</bool>
+    <bool name="config_chargingVibrationEnabled">true</bool>
+
+    <!-- Doze -->
+    <bool name="config_dozeEnabled">true</bool>
+    <bool name="config_dozePulseEnabled">true</bool>
+    <bool name="config_dozePickUpGestureEnabled">true</bool>
+    <bool name="config_dozePulseOnNotifications">true</bool>
+    <bool name="config_dozePulseOnDoubleClick">true</bool>
+    <bool name="config_dozePulseOnLongPress">false</bool>
+    <bool name="config_dozePulseOnRaise">true</bool>
+    <bool name="config_dozePulseOnTilt">false</bool>
+
+    <!-- Dream -->
+    <bool name="config_dreamsEnabled">true</bool>
+    <bool name="config_dreamsEnabledByDefault">true</bool>
+    <bool name="config_dreamsSupported">true</bool>
+
+    <!-- Screen off -->
+    <bool name="config_screenOffUdfps">false</bool>
+    <bool name="config_supportsScreenOffUdfps">false</bool>
+
+    <!-- Udfps -->
+    <bool name="config_udfpsAvailable">false</bool>
+    <bool name="config_supportUdfps">false</bool>
+
+    <!-- In-display fingerprint -->
+    <bool name="config_isInDisplayFingerprintSupported">false</bool>
+    <!-- Telephony -->
+    <bool name="config_sms_capable">true</bool>
+    <bool name="config_voice_capable">true</bool>
+    <bool name="config_data_capable">true</bool>
+    <bool name="config_mms_capable">true</bool>
+    <bool name="config_telephony_use_own_number_for_voicemail">false</bool>
+    <bool name="config_world_mode">true</bool>
+    <bool name="config_cdma_call_waiting">true</bool>
+    <bool name="config_enable_emergency_call_while_sim_locked">true</bool>
+    <bool name="config_allow_emergency_numbers_without_call_state">true</bool>
+    <bool name="config_support_conference_call">true</bool>
+    <bool name="config_support_downgrade_vt_to_audio">true</bool>
+
+    <!-- WiFi -->
+    <bool name="config_wifi_softap_supported">true</bool>
+    <bool name="config_wifi_background_scan_support">true</bool>
+    <bool name="config_wifi_enable_wifi_firmware_debugging">false</bool>
+    <bool name="config_wifi_suspend_optimizations_enabled">true</bool>
+    <bool name="config_wifi_p2p_supported">true</bool>
+    <bool name="config_wifi_tether_supported">true</bool>
+    <bool name="config_wifi_direct_supported">true</bool>
+    <bool name="config_wifi_hotspot_supported">true</bool>
+    <bool name="config_wifi_scan_interval">10000</bool>
+    <bool name="config_wifi_connected_mac_randomization_supported">true</bool>
+    <bool name="config_wifi_rtt_supported">false</bool>
+    <bool name="config_wifi_awake_supported">true</bool>
+
+    <!-- Bluetooth -->
+    <bool name="config_bluetooth_enabled_by_default">true</bool>
+    <bool name="config_bluetooth_auto_enable">true</bool>
+    <bool name="config_bluetooth_pan_supported">true</bool>
+    <bool name="config_bluetooth_map_supported">true</bool>
+    <bool name="config_bluetooth_pbap_supported">true</bool>
+    <bool name="config_bluetooth_opp_supported">true</bool>
+    <bool name="config_bluetooth_hid_supported">true</bool>
+    <bool name="config_bluetooth_hfp_supported">true</bool>
+    <bool name="config_bluetooth_a2dp_supported">true</bool>
+    <bool name="config_bluetooth_avrcp_supported">true</bool>
+
+    <!-- GPS -->
+    <bool name="config_gps_supported">true</bool>
+    <bool name="config_agps_enabled">true</bool>
+    <bool name="config_supl_enabled">true</bool>
+    <bool name="config_c2k_enabled">false</bool>
+
+    <!-- Sensors -->
+    <bool name="config_accelerometerRotate">true</bool>
+    <bool name="config_automatic_brightness_available">true</bool>
+    <bool name="config_lidControlsSleep">true</bool>    <bool name="config_supportsCamToggle">true</bool>
+    <bool name="config_supportsMicToggle">true</bool>
+
+    <!-- Power -->
+    <bool name="config_suspendingAndIdle">true</bool>
+    <bool name="config_hasWakeBattery">true</bool>
+    <bool name="config_hasBluetoothBattery">true</bool>
+    <bool name="config_hasWifiBattery">true</bool>
+    <bool name="config_supportsPowerOffAlarm">true</bool>
+    <bool name="config_supportsDualBattery">false</bool>
+    <bool name="config_supportsBatteryProtection">true</bool>
+    <bool name="config_supportsAdaptiveCharging">true</bool>
+
+    <!-- Storage -->
+    <bool name="config_external_storage_supported">true</bool>
+    <bool name="config_internal_storage_supported">true</bool>
+    <bool name="config_adoptable_storage_supported">true</bool>
+    <bool name="config_supportsSystemUpdate">true</bool>
+
+    <!-- Memory -->
+    <bool name="config_low_ram_device">true</bool>
+    <bool name="config_avoid_gfx_accel_config">false</bool>
+
+    <!-- Display -->
+    <bool name="config_supportsMiracast">true</bool>
+    <bool name="config_supportsHdmiCec">false</bool>
+    <bool name="config_supportsDolbyVision">false</bool>
+    <bool name="config_supportsHdr">false</bool>
+    <bool name="config_supportsWideColor">true</bool>
+    <bool name="config_supportsColorManagement">true</bool>
+    <bool name="config_supportsNightDisplay">true</bool>
+    <bool name="config_supportsLiveDisplay">true</bool>
+
+    <!-- Audio -->
+    <bool name="config_supportsAudioShare">true</bool>
+    <bool name="config_supportsSpatialAudio">false</bool>
+    <bool name="config_supportsHeadTracking">false</bool>
+    <bool name="config_supportsAudioEffects">true</bool>
+    <bool name="config_supportsEqualizer">true</bool>
+    <bool name="config_supportsBassBoost">true</bool>
+    <bool name="config_supportsVirtualizer">true</bool>
+    <bool name="config_supportsReverb">true</bool>
+    <bool name="config_supportsVisualizer">true</bool>
+
+    <!-- Video -->
+    <bool name="config_supportsVideoEncoding">true</bool>
+    <bool name="config_supportsVideoDecoding">true</bool>
+    <bool name="config_supports4kVideo">true</bool>
+    <bool name="config_supportsHdrVideo">false</bool>
+    <bool name="config_supportsDolbyAtmos">false</bool>    <bool name="config_supportsDts">false</bool>
+
+    <!-- Camera -->
+    <bool name="config_supportsCamera2">true</bool>
+    <bool name="config_supportsRawImage">true</bool>
+    <bool name="config_supportsRawVideo">false</bool>
+    <bool name="config_supportsPortraitMode">true</bool>
+    <bool name="config_supportsNightMode">true</bool>
+    <bool name="config_supportsProMode">true</bool>
+    <bool name="config_supportsPanoramaMode">true</bool>
+    <bool name="config_supportsSlowMotion">true</bool>
+    <bool name="config_supportsTimeLapse">true</bool>
+    <bool name="config_supportsHyperlapse">true</bool>
+    <bool name="config_supportsWideAngleCamera">false</bool>
+    <bool name="config_supportsTelephotoCamera">false</bool>
+    <bool name="config_supportsMacroCamera">false</bool>
+    <bool name="config_supportsDepthCamera">false</bool>
+    <bool name="config_supportsMonoCamera">false</bool>
+    <bool name="config_supportsDualCamera">true</bool>
+    <bool name="config_supportsTripleCamera">false</bool>
+    <bool name="config_supportsQuadCamera">false</bool>
+    <bool name="config_supportsFrontCamera">true</bool>
+    <bool name="config_supportsRearCamera">true</bool>
+    <bool name="config_supportsExternalCamera">true</bool>
+
+    <!-- Misc -->
+    <bool name="config_supportsSecureFolder">true</bool>
+    <bool name="config_supportsKnox">false</bool>
+    <bool name="config_supportsDex">false</bool>
+    <bool name="config_supportsEdgePanel">false</bool>
+    <bool name="config_supportsAlwaysOnDisplay">false</bool>
+    <bool name="config_supportsBixby">false</bool>
+    <bool name="config_supportsGoogleAssistant">true</bool>
+    <bool name="config_supportsGooglePay">true</bool>
+    <bool name="config_supportsSamsungPay">false</bool>
+    <bool name="config_supportsWirelessPowerShare">false</bool>
+    <bool name="config_supportsReverseCharging">false</bool>
+    <bool name="config_supportsFastCharging">true</bool>
+    <bool name="config_supportsSuperFastCharging">false</bool>
+    <bool name="config_supportsUltraFastCharging">false</bool>
+</resources>

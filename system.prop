@@ -1,0 +1,74 @@
+#
+# Copyright (C) 2026 TIBI624
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+# Display
+ro.sf.lcd_density=420
+persist.sys.sf.color_saturation=1.0
+persist.sys.sf.color_mode=0
+
+# Performance
+ro.sys.fw.dex2oat_thread_count=4
+dalvik.vm.heapstartsize=8m
+dalvik.vm.heapgrowthlimit=192m
+dalvik.vm.heapsize=512m
+dalvik.vm.heaptargetutilization=0.75
+dalvik.vm.heapminfree=512k
+dalvik.vm.heapmaxfree=8m
+
+# Low RAM optimizations
+ro.config.low_ram=true
+persist.sys.zram_enabled=1
+
+# Bluetooth
+ro.bluetooth.library.name=libbluetooth.so
+ro.qualcomm.bt.hci_transport=smd
+
+# WiFi
+wifi.interface=wlan0
+ro.wifi.channels=
+
+# GPS
+ro.gps.agps_provider=1
+
+# Camera
+persist.camera.HAL3.enabled=1
+persist.camera.gyro.disable=0
+
+# Audio
+ro.config.vc_call_vol_steps=7
+ro.config.media_vol_steps=25
+
+# USB
+persist.sys.usb.config=mtp,adb
+ro.sys.usb.storage.type=mtp
+
+# RIL
+ro.ril.hsxpa=1
+ro.ril.gprsclass=10
+ro.ril.hep=1
+ro.ril.enable.dtm=1
+ro.ril.hsdpa.category=10
+ro.ril.enable.a53=1
+ro.ril.enable.3g.prefix=1
+ro.ril.htcmaskw1.bitmask=4294967295
+ro.ril.htcmaskw1=14449
+ro.ril.hsupa.category=5
+
+# Power
+ro.power.profile=balanced
+
+# Build
+ro.build.characteristics=phone
