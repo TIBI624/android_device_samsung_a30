@@ -3,13 +3,13 @@
   <!-- Device Tree -->
   <project path="device/samsung/a30" name="TIBI624/android_device_samsung_a30" remote="github" revision="android-16" />
 
-  <!-- Common Tree (ветка android-15) -->
+  <!-- Common Tree -->
   <project path="device/samsung/exynos7885-common" name="TIBI624/android_device_samsung_exynos7885" remote="github" revision="android-15" />
 
   <!-- Kernel -->
   <project path="kernel/samsung/universal7885" name="eurekadevelopment/Eureka-Kernel-Exynos7885-Q-R-S" remote="github" revision="master" />
 
-  <!-- Vendor -->
-  <project path="vendor/samsung/a30" name="eurekadevelopment/android_vendor_samsung_a30" remote="github" revision="android-15" />
+  <!-- Vendor (новая ссылка) -->
+  <project path="vendor/samsung/a30" name="AndroidBlobs/vendor_samsung_a30" remote="github" revision="master" />
   <project path="vendor/samsung/universal7885-common" name="eurekadevelopment/android_vendor_samsung_exynos7885" remote="github" revision="android-15" />
 </manifest>
