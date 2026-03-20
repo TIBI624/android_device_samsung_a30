@@ -2,7 +2,6 @@
 # Cirrus CI Configuration for Samsung A30 Device Tree (Evolution X / Android 16)
 # =============================================================================
 
-# Global environment variables
 env:
   CIRRUS_CLONE_DEPTH: 1
   CCACHE_DIR: /tmp/ccache
@@ -13,70 +12,54 @@ env:
   DEVICE: a30
   ROM_TARGET: evolution_a30-userdebug
 
-# Cache ccache to speed up subsequent builds
 ccache_cache:
   folder: $CCACHE_DIR
-  # Fingerprint based on device tree files that affect build output
   fingerprint_script: cat device/samsung/a30/Android.mk device/samsung/a30/BoardConfig.mk device/samsung/a30/device.mk 2>/dev/null || echo "fallback"
 
-# Main build task
 task:
   name: "Build Evolution X for A30"
-  # Run only on android-16 branch or PRs
   only_if: $CIRRUS_BRANCH == 'android-16' || $CIRRUS_PULL_REQUEST != ''
-  timeout_in: 180m  # 3 hours max for full ROM build
-  
-  # Use Android SDK Docker image with sufficient resources
+  timeout_in: 180m
+
   container:
     image: ghcr.io/cirruslabs/android-sdk:35
     cpu: 8
     memory: 16G
-    disk: 100G  # Critical: AOSP sync + build needs ~80-100GB
+    disk: 100G
 
-  # Install build dependencies
   install_deps_script:
     - sudo apt-get update -qq
-    - sudo apt-get install -y bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev repo python3 python3-pip aria2 libncurses5
+    - sudo apt-get install -y bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev repo python3 python3-pip aria2 wget
     - git config --global user.email "ci@tib624.dev"
     - git config --global user.name "Cirrus CI"
 
-  # Clone the main ROM repo and inject local_manifest from root of this repo
-  # NOTE: local_manifest.xml is located in the ROOT of this device tree repository
   sync_script:
     - mkdir -p ~/android && cd ~/android
-    # Initialize Evolution X manifest (branch 'vic' for Android 16)
     - repo init -u https://github.com/Evolution-X/manifest.git -b vic --git-lfs
     - mkdir -p .repo/local_manifests
-    # Copy local_manifest.xml from device tree root (current working dir = cloned repo)
     - cp $CIRRUS_WORKING_DIR/local_manifest.xml .repo/local_manifests/a30.xml
-    # Sync repositories
     - repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j4
 
-  # Build environment setup and compilation
   build_script:
     - cd ~/android
     - source build/envsetup.sh
     - lunch $ROM_TARGET
-    # Build boot/recovery first for faster feedback
     - mka bootimage -j8
     - mka recoveryimage -j8
-    # Full ROM build (optional, may be skipped if only testing device tree)
     - mka bacon -j8
 
-  # Upload build artifacts
   bootimage_artifacts:
     path: "~/android/out/target/product/a30/boot.img"
     type: application/octet-stream
-  
+
   recoveryimage_artifacts:
     path: "~/android/out/target/product/a30/recovery.img"
     type: application/octet-stream
-  
+
   rom_artifacts:
     path: "~/android/out/target/product/a30/EvolutionX-*.zip"
     type: application/zip
 
-  # Cleanup cache before storing (remove non-deterministic files)
   before_cache_script:
     - find $CCACHE_DIR -name "*.o" -mtime +7 -delete 2>/dev/null || true
     - find $CCACHE_DIR -name "*.gcda" -delete 2>/dev/null || true
