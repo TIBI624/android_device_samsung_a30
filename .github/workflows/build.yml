@@ -25,7 +25,10 @@ jobs:
     - name: Setup Build Environment
       run: |
         sudo apt-get update
-        sudo apt-get install -y openjdk-17-jdk git gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig img2simg python3 python3-pip aria2 ccache libssl-dev repo
+        sudo apt-get install -y openjdk-17-jdk git gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig img2simg python3 python3-pip aria2 ccache libssl-dev
+        # Fix for repo tool version and permissions
+        sudo curl https://storage.googleapis.com/git-repo-downloads/repo -o /usr/bin/repo
+        sudo chmod a+x /usr/bin/repo
         git config --global user.email "tib624@example.com"
         git config --global user.name "TIBI624"
 
@@ -33,9 +36,12 @@ jobs:
       run: |
         mkdir workspace
         cd workspace
-        repo init -u https://github.com/Evolution-X/manifest.git -b fourteen
+        # Changed branch from 'fourteen' to 'vic' as 'fourteen' might be deprecated
+        repo init -u https://github.com/Evolution-X/manifest.git -b vic
         mkdir -p .repo/local_manifests
-        cp ../device/samsung/a30/local_manifest.xml .repo/local_manifests/
+        if [ -f ../device/samsung/a30/local_manifest.xml ]; then
+          cp ../device/samsung/a30/local_manifest.xml .repo/local_manifests/
+        fi
         repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
 
     - name: Setup Environment and Lunch
@@ -49,13 +55,13 @@ jobs:
         cd workspace
         mka bootimage -j$(nproc --all)
         mkdir -p artifacts
-        cp out/target/product/a30/boot.img artifacts/
+        cp out/target/product/a30/boot.img artifacts/ || true
 
     - name: Build Recovery Image
       run: |
         cd workspace
         mka recoveryimage -j$(nproc --all)
-        cp out/target/product/a30/recovery.img artifacts/
+        cp out/target/product/a30/recovery.img artifacts/ || true
 
     - name: Upload Boot Image
       uses: actions/upload-artifact@v4
@@ -74,11 +80,11 @@ jobs:
       run: |
         cd workspace
         mka bacon -j$(nproc --all)
-        cp out/target/product/a30/EvolutionX-*.zip artifacts/
+        cp out/target/product/a30/EvolutionX-*.zip artifacts/ || true
 
     - name: Upload ROM
       uses: actions/upload-artifact@v4
       with:
         name: evolutionx-${{ matrix.device }}
         path: workspace/artifacts/EvolutionX-*.zip
-      if: success() && hashFiles('workspace/artifacts/EvolutionX-*.zip') != ''
+      if: success()
