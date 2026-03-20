@@ -58,7 +58,7 @@ mkdir android16_a30
 cd android16_a30
 
 # Initialize Evolution X repo
-repo init -u https://github.com/Evolution-X/manifest.git -b fourteen --git-lfs
+repo init -u https://github.com/Evolution-X/manifest.git -b fourteen
 
 # Add local manifest for device tree
 mkdir -p .repo/local_manifests
@@ -100,7 +100,7 @@ This device tree requires the following repositories (see `evolution.dependencie
 
 | Repository | Path | Purpose |
 |------------|------|---------|
-| [universal7885-common](https://github.com/eurekadevelopment/android_device_samsung_universal7885) | device/samsung/universal7885-common | Common HAL & configs |
+| [universal7885-common](https://github.com/eurekadevelopment/android_device_samsung_exynos7885) | device/samsung/universal7885-common | Common HAL & configs |
 | [Eureka Kernel](https://github.com/eurekadevelopment/Eureka-Kernel-Exynos7885-Q-R-S) | kernel/samsung/universal7885 | Kernel sources |
 | [Vendor Blobs](https://github.com/eurekadevelopment/android_vendor_samsung_a30) | vendor/samsung/a30 | Proprietary binaries |
 

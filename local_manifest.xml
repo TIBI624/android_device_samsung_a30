@@ -2,10 +2,10 @@
 <manifest>
   <!-- Device Tree -->
   <project path="device/samsung/a30" name="TIBI624/android_device_samsung_a30" remote="github" revision="android-16" />
-  
-  <!-- Common Tree -->
-  <project path="device/samsung/universal7885-common" name="eurekadevelopment/android_device_samsung_universal7885" remote="github" revision="android-15" />
-  
+
+  <!-- Common Tree (ветка android-15) -->
+  <project path="device/samsung/exynos7885-common" name="TIBI624/android_device_samsung_exynos7885" remote="github" revision="android-15" />
+
   <!-- Kernel -->
   <project path="kernel/samsung/universal7885" name="eurekadevelopment/Eureka-Kernel-Exynos7885-Q-R-S" remote="github" revision="master" />
 

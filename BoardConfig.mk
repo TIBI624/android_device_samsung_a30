@@ -47,7 +47,8 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a53
 # =============================================================================
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_CONFIG := exynos7885-a30_defconfigTARGET_KERNEL_SOURCE := kernel/samsung/universal7885
+TARGET_KERNEL_CONFIG := exynos7885-a30_defconfig
+TARGET_KERNEL_SOURCE := kernel/samsung/universal7885
 BOARD_KERNEL_BASE := 0x40000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_OFFSET := 0x00008000
@@ -140,5 +141,5 @@ TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
 # =============================================================================
 # INCLUDES
 # =============================================================================
-include device/samsung/universal7885-common/BoardConfigCommon.mk
+include device/samsung/exynos7885-common/BoardConfigCommon.mk
 -include vendor/samsung/a30/BoardConfigVendor.mk

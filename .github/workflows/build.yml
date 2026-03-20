@@ -33,15 +33,14 @@ jobs:
       run: |
         mkdir workspace
         cd workspace
-        repo init -u https://github.com/Evolution-X/manifest.git -b fourteen --git-lfs
+        repo init -u https://github.com/Evolution-X/manifest.git -b fourteen
         mkdir -p .repo/local_manifests
         cp ../device/samsung/a30/local_manifest.xml .repo/local_manifests/
         repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
 
-    - name: Setup Device Tree
+    - name: Setup Environment and Lunch
       run: |
         cd workspace
-        cp -r ../device/samsung/a30 device/samsung/a30
         source build/envsetup.sh
         lunch evolution_a30-userdebug
 
@@ -49,36 +48,37 @@ jobs:
       run: |
         cd workspace
         mka bootimage -j$(nproc --all)
-        mkdir -p ../out/artifacts
-        cp out/target/product/a30/boot.img ../out/artifacts/
+        mkdir -p artifacts
+        cp out/target/product/a30/boot.img artifacts/
 
     - name: Build Recovery Image
       run: |
         cd workspace
         mka recoveryimage -j$(nproc --all)
-        cp out/target/product/a30/recovery.img ../out/artifacts/
+        cp out/target/product/a30/recovery.img artifacts/
 
     - name: Upload Boot Image
       uses: actions/upload-artifact@v4
       with:
         name: bootimage-${{ matrix.device }}
-        path: out/artifacts/boot.img
+        path: workspace/artifacts/boot.img
 
     - name: Upload Recovery Image
       uses: actions/upload-artifact@v4
       with:
         name: recoveryimage-${{ matrix.device }}
-        path: out/artifacts/recovery.img
+        path: workspace/artifacts/recovery.img
 
-    - name: Build Full ROM (Optional - requires more disk space)
+    - name: Build Full ROM (Optional)
       continue-on-error: true
       run: |
         cd workspace
         mka bacon -j$(nproc --all)
-        cp out/target/product/a30/EvolutionX-*.zip ../out/artifacts/
+        cp out/target/product/a30/EvolutionX-*.zip artifacts/
 
     - name: Upload ROM
       uses: actions/upload-artifact@v4
       with:
         name: evolutionx-${{ matrix.device }}
-        path: out/artifacts/EvolutionX-*.zip
+        path: workspace/artifacts/EvolutionX-*.zip
+      if: success() && hashFiles('workspace/artifacts/EvolutionX-*.zip') != ''
