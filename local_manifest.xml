@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <!-- Device Tree -->
-  <project path="device/samsung/a30" name="TIBI624/android_device_samsung_a30" remote="github" revision="android-16" />
+  <project path="device/samsung/a30"
+           name="TIBI624/android_device_samsung_a30"
+           remote="github"
+           revision="android-16" />
 
-  <!-- Common Tree -->
-  <project path="device/samsung/exynos7885-common" name="TIBI624/android_device_samsung_exynos7885" remote="github" revision="android-15" />
+  <!-- Common Device Tree (Exynos7885) -->
+  <project path="device/samsung/exynos7885-common"
+           name="TIBI624/android_device_samsung_exynos7885"
+           remote="github"
+           revision="android-15" />
 
-  <!-- Kernel -->
-  <project path="kernel/samsung/universal7885" name="eurekadevelopment/Eureka-Kernel-Exynos7885-Q-R-S" remote="github" revision="master" />
+  <!-- Kernel (Eureka, AOSP-совместимая ветка) -->
+  <project path="kernel/samsung/universal7885"
+           name="eurekadevelopment/Eureka-Kernel"
+           remote="github"
+           revision="R15-AOSP" />
 
-  <!-- Vendor (новая ссылка) -->
-  <project path="vendor/samsung/a30" name="AndroidBlobs/vendor_samsung_a30" remote="github" revision="master" />
-  <project path="vendor/samsung/universal7885-common" name="eurekadevelopment/android_vendor_samsung_exynos7885" remote="github" revision="android-15" />
+  <!-- Vendor blobs для A30 (Android 10) -->
+  <project path="vendor/samsung/a30"
+           name="AndroidBlobs/vendor_samsung_a30"
+           remote="github"
+           revision="a30dd-user-10-QP1A.190711.020-A305FDDU4BTB3-release-keys" />
 </manifest>

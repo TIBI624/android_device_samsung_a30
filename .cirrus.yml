@@ -35,10 +35,10 @@ task:
 
   sync_script:
     - mkdir -p ~/android && cd ~/android
-    - repo init -u https://github.com/Evolution-X/manifest.git -b vic --git-lfs
+    - repo init -u https://github.com/Evolution-X/manifest.git -b vic
     - mkdir -p .repo/local_manifests
     - cp $CIRRUS_WORKING_DIR/local_manifest.xml .repo/local_manifests/a30.xml
-    - repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j4
+    - repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc)
 
   build_script:
     - cd ~/android

@@ -1,9 +1,15 @@
 # Samsung Galaxy A30 Device Tree for Android 16 (Evolution X)
 
-[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/TIBI624/android_device_samsung_a30/build.yml?branch=android-16&style=for-the-badge)](https://github.com/TIBI624/android_device_samsung_a30/actions)
+[![Cirrus CI](https://img.shields.io/cirrus/build/TIBI624/android_device_samsung_a30?style=for-the-badge&logo=cirrusci)](https://cirrus-ci.com/github/TIBI624/android_device_samsung_a30)
 [![License](https://img.shields.io/github/license/TIBI624/android_device_samsung_a30?style=for-the-badge)](LICENSE)
 [![Android Version](https://img.shields.io/badge/Android-16-blue?style=for-the-badge&logo=android)](https://www.android.com/)
 [![ROM Base](https://img.shields.io/badge/ROM-Evolution%20X-red?style=for-the-badge)](https://evolution-x.org/)
+
+> 💡 **Want to fork this project?**  
+> [![Fork on GitHub](https://img.shields.io/badge/Fork-This%20Repo-000?style=for-the-badge&logo=github)](https://github.com/TIBI624/android_device_samsung_a30/fork)  
+> Не нравится Evolution X? Создай свой форк, поменяй пару конфигов и собирай свою кастомную прошивку! 🚀
+
+---
 
 ## 📱 Device Specifications
 
@@ -22,11 +28,13 @@
 | **Original OS** | Android 9.0 (Pie), One UI 1.1 |
 | **Current OS** | Android 16 (Evolution X) |
 
+---
+
 ## 🚀 Project Status
 
 | Component | Status | Notes |
 |-----------|--------|-------|
-| **Boot** | ✅ Working | Kernel: Eureka R15.1.1 (4KB pages) |
+| **Boot** | ✅ Working | Kernel: Eureka R15-AOSP (4KB pages) |
 | **Display** | ✅ Working | 1080x2340, 420 DPI |
 | **Touch** | ✅ Working | Multi-touch supported |
 | **WiFi** | ✅ Working | Broadcom BCM4375 |
@@ -40,72 +48,152 @@
 | **Face Unlock** | ✅ Working | Software-based |
 | **USB** | ✅ Working | MTP, ADB, Charging |
 | **SELinux** | ⚠️ Permissive | Enforcing WIP |
+---
 
 ## 🛠️ Build Instructions
 
 ### Prerequisites
 
-- **OS**: Ubuntu 20.04 LTS or newer (64-bit)
-- **RAM**: Minimum 16GB (32GB recommended)
-- **Storage**: Minimum 100GB free space- **Python**: 3.8 or newer
-- **Repo**: Latest version from Google
+| Requirement | Specification |
+|-------------|---------------|
+| **OS** | Ubuntu 20.04 LTS or newer (64-bit) |
+| **RAM** | Minimum 16GB (32GB recommended) |
+| **Storage** | Minimum 100GB free space |
+| **Python** | 3.8 or newer |
+| **Repo** | Latest version from Google |
 
-### Step 1: Initialize Repo
+---
+
+### 🖥️ Option 1: Local Build (On Your Machine)
+
+> ⚠️ **Важно!** Файл `local_manifest.xml` уже находится в **корне этого репозитория**.  
+> Просто скопируй его в нужную папку перед запуском `repo sync`:
 
 ```bash
-# Create working directory
+# После инициализации repo, но до sync:
+cp local_manifest.xml .repo/local_manifests/a30.xml
+```
+
+#### Step-by-Step:
+
+```bash
+# 1. Create working directory
 mkdir android16_a30
 cd android16_a30
 
-# Initialize Evolution X repo
-repo init -u https://github.com/Evolution-X/manifest.git -b fourteen
+# 2. Initialize Evolution X repo
+repo init -u https://github.com/Evolution-X/manifest.git -b vic
 
-# Add local manifest for device tree
+# 3. Copy local manifest (from this repo root)
 mkdir -p .repo/local_manifests
-cp path/to/a30.xml .repo/local_manifests/
-```
+cp /path/to/android_device_samsung_a30/local_manifest.xml .repo/local_manifests/a30.xml
 
-### Step 2: Sync Sources
-
-```bash
-# Sync all repositories
+# 4. Sync all repositories
 repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
-```
 
-### Step 3: Setup Environment
-
-```bash
-# Source build environment
+# 5. Setup environment
 source build/envsetup.sh
-
-# Select device configuration
 lunch evolution_a30-userdebug
-```
 
-### Step 4: Build
+# 6. Build
+mka bootimage -j$(nproc --all)      # For testing boot.imgmka bacon -j$(nproc --all)          # For full ROM
 
-```bash
-# Build boot image (for testing)
-mka bootimage -j$(nproc --all)
-
-# Build full ROM
-mka bacon -j$(nproc --all)
-
-# Output location
+# 7. Output location
 # out/target/product/a30/EvolutionX-*.zip
 ```
 
-## 📋 Dependencies
-This device tree requires the following repositories (see `evolution.dependencies`):
+---
 
-| Repository | Path | Purpose |
-|------------|------|---------|
-| [universal7885-common](https://github.com/eurekadevelopment/android_device_samsung_exynos7885) | device/samsung/universal7885-common | Common HAL & configs |
-| [Eureka Kernel](https://github.com/eurekadevelopment/Eureka-Kernel-Exynos7885-Q-R-S) | kernel/samsung/universal7885 | Kernel sources |
-| [Vendor Blobs](https://github.com/AndroidBlobs/vendor_samsung_a30) | vendor/samsung/a30 | Proprietary binaries |
+### 🤖 Option 2: Cirrus CI Build (Automatic)
+
+> ✅ **Всё уже настроено!** Файл `.cirrus.yml` находится в корне репозитория.  
+> Сборка запускается автоматически при:
+> - Пуше в ветку `android-16`
+> - Создании Pull Request
+
+#### Что делает Cirrus CI:
+| Шаг | Действие |
+|-----|----------|
+| 1 | Клонирует репозиторий |
+| 2 | Инициализирует Evolution-X manifest (ветка `vic`) |
+| 3 | Копирует `local_manifest.xml` в `.repo/local_manifests/` |
+| 4 | Синхронизирует все зависимости |
+| 5 | Собирает `boot.img`, `recovery.img`, `EvolutionX-*.zip` |
+| 6 | Кэширует `ccache` для ускорения следующих сборок |
+
+#### Артефакты сборки:
+- `boot.img` — образ загрузчика
+- `recovery.img` — образ рекавери
+- `EvolutionX-*.zip` — готовая прошивка
+
+> 📌 **Примечание**: Если бейдж Cirrus CI показывает "Repository not found", убедись, что `.cirrus.yml` присутствует в корне репозитория на ветке `android-16`.
+
+---
+
+## 📋 Dependencies
+
+| Repository | Path | Purpose | Branch/Revision |
+|------------|------|---------|-----------------|
+| [Device Tree (A30)](https://github.com/TIBI624/android_device_samsung_a30) | device/samsung/a30 | Device-specific configs | `android-16` |
+| [Common Tree (Exynos7885)](https://github.com/TIBI624/android_device_samsung_exynos7885) | device/samsung/exynos7885-common | Common HAL & configs | `android-15` |
+| [Eureka Kernel](https://github.com/eurekadevelopment/Eureka-Kernel) | kernel/samsung/universal7885 | Kernel sources | `R15-AOSP` |
+| [Vendor Blobs (A30)](https://github.com/AndroidBlobs/vendor_samsung_a30) | vendor/samsung/a30 | Proprietary binaries (Android 10) | `a30dd-user-10-QP1A.190711.020-A305FDDU4BTB3-release-keys` |
+
+> ⚠️ **Important**: Use **exact branch names** as listed above — `master` or default branches will **not work**.
+
+---
+
+## 🔄 Adapting for Other ROMs
+
+Этот device tree изначально настроен для **Evolution X**, но его можно легко адаптировать для других прошивок на основе AOSP.
+### What to Change:
+
+| File | Evolution X | LineageOS | Pixel Experience | ArrowOS |
+|------|-------------|-----------|------------------|---------|
+| `device.mk` | `evolution_a30` | `lineage_a30` | `pe_a30` | `arrow_a30` |
+| `BoardConfig.mk` | `TARGET_SUPPORTS_64_BIT_APPS := true` | Same | Same | Same |
+| `AndroidProducts.mk` | `PRODUCT_MAKEFILES := evolution_a30` | `lineage_a30` | `pe_a30` | `arrow_a30` |
+| `lunch` command | `evolution_a30-userdebug` | `lineage_a30-userdebug` | `pe_a30-userdebug` | `arrow_a30-userdebug` |
+| Manifest branch | `-b vic` | `-b lineage-22.1` | `-b main` | `-b 16.0` |
+
+### Quick Guide for Other ROMs:
+
+```bash
+# 1. Fork this repository
+# 2. Edit device/samsung/a30/AndroidProducts.mk:
+PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/lineage_a30.mk  # Change from evolution_a30.mk
+
+# 3. Edit device/samsung/a30/device.mk:
+# Change all references from "evolution" to "lineage"
+
+# 4. Initialize your ROM's manifest:
+repo init -u https://github.com/LineageOS/android.git -b lineage-22.1
+
+# 5. Copy local_manifest.xml:
+cp local_manifest.xml .repo/local_manifests/a30.xml
+
+# 6. Build:
+source build/envsetup.sh
+lunch lineage_a30-userdebug
+mka bacon -j$(nproc --all)
+```
+
+### ⚠️ Important Notes for ROM Compatibility:
+
+| ROM | Compatibility | Notes |
+|-----|---------------|-------|
+| **Evolution X** | ✅ Native | Fully tested |
+| **LineageOS** | ⚠️ Requires changes | Update vendor blobs if needed |
+| **Pixel Experience** | ⚠️ Requires changes | Check proprietary files |
+| **ArrowOS** | ⚠️ Requires changes | Minimal changes needed |
+| **crDroid** | ⚠️ Requires changes | Based on LineageOS |
+
+> 💡 **Tip**: Most changes are in `device.mk` and `AndroidProducts.mk`. The hardware configuration (`BoardConfig.mk`) usually stays the same across AOSP-based ROMs.
+
+---
 
 ## ⚠️ Important Notes
-
 ### 16KB Page Size Compatibility
 
 This device tree implements **Android 16 16KB page alignment** while maintaining **4KB kernel pages** for blob compatibility:
@@ -134,6 +222,16 @@ ro.config.low_ram=true
 - **AVB**: Disabled by default (enable after testing)
 - **Dynamic Partitions**: Disabled for stability (static partitions recommended)
 
+### ⚠️ Vendor Blobs Compatibility
+
+> The vendor blobs are sourced from **Android 10 (Q)**.  
+> When building for Android 16, some HALs may require adaptation.  
+> If you encounter errors, check:
+> - `device/samsung/a30/overlay/` for framework patches
+> - `proprietary-files.txt` for missing libraries
+
+---
+
 ## 🔧 Extracting Vendor Blobs
 
 ```bash
@@ -150,6 +248,8 @@ cd device/samsung/a30
 
 **Note**: If building on cloud/remote machine without physical device, download stock firmware and extract blobs locally before pushing to your build environment.
 
+---
+
 ## 📞 Support & Development
 
 | Platform | Link |
@@ -158,6 +258,8 @@ cd device/samsung/a30
 | **XDA Thread** | [Coming soon](https://forum.xda-developers.com/) |
 | **Evolution X Telegram** | [Evolution X Official](https://t.me/evolutionxofficial) |
 | **Eureka Development** | [Eureka Telegram](https://t.me/eureka_kernel) |
+
+---
 
 ## 📜 License
 
