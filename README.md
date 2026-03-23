@@ -7,7 +7,7 @@
 
 > 💡 **Want to fork this project?**  
 > [![Fork on GitHub](https://img.shields.io/badge/Fork-This%20Repo-000?style=for-the-badge&logo=github)](https://github.com/TIBI624/android_device_samsung_a30/fork)  
-> Не нравится Evolution X? Создай свой форк, поменяй пару конфигов и собирай свою кастомную прошивку! 🚀
+> Don't like Evolution X? Fork this repo, tweak a few configs in `device/samsung/a30/` and `vendor/`, and build your own custom ROM! 🚀
 
 ---
 
@@ -66,11 +66,11 @@
 
 ### 🖥️ Option 1: Local Build (On Your Machine)
 
-> ⚠️ **Важно!** Файл `local_manifest.xml` уже находится в **корне этого репозитория**.  
-> Просто скопируй его в нужную папку перед запуском `repo sync`:
+> ⚠️ **Important!** The file `local_manifest.xml` is already in the **root of this repository**.  
+> Just copy it to the correct location before running `repo sync`:
 
 ```bash
-# После инициализации repo, но до sync:
+# After repo init, but before repo sync:
 cp local_manifest.xml .repo/local_manifests/a30.xml
 ```
 
@@ -106,27 +106,27 @@ mka bootimage -j$(nproc --all)      # For testing boot.imgmka bacon -j$(nproc --
 
 ### 🤖 Option 2: Cirrus CI Build (Automatic)
 
-> ✅ **Всё уже настроено!** Файл `.cirrus.yml` находится в корне репозитория.  
-> Сборка запускается автоматически при:
-> - Пуше в ветку `android-16`
-> - Создании Pull Request
+> ✅ **Everything is pre-configured!** The `.cirrus.yml` file is in the repository root.  
+> Build triggers automatically on:
+> - Push to `android-16` branch
+> - Pull Request creation
 
-#### Что делает Cirrus CI:
-| Шаг | Действие |
-|-----|----------|
-| 1 | Клонирует репозиторий |
-| 2 | Инициализирует Evolution-X manifest (ветка `vic`) |
-| 3 | Копирует `local_manifest.xml` в `.repo/local_manifests/` |
-| 4 | Синхронизирует все зависимости |
-| 5 | Собирает `boot.img`, `recovery.img`, `EvolutionX-*.zip` |
-| 6 | Кэширует `ccache` для ускорения следующих сборок |
+#### What Cirrus CI does:
+| Step | Action |
+|------|--------|
+| 1 | Clones the repository |
+| 2 | Initializes Evolution-X manifest (`vic` branch) |
+| 3 | Copies `local_manifest.xml` to `.repo/local_manifests/` |
+| 4 | Syncs all dependencies |
+| 5 | Builds `boot.img`, `recovery.img`, `EvolutionX-*.zip` |
+| 6 | Caches `ccache` for faster subsequent builds |
 
-#### Артефакты сборки:
-- `boot.img` — образ загрузчика
-- `recovery.img` — образ рекавери
-- `EvolutionX-*.zip` — готовая прошивка
+#### Build Artifacts:
+- `boot.img` — Boot image
+- `recovery.img` — Recovery image
+- `EvolutionX-*.zip` — Final ROM zip
 
-> 📌 **Примечание**: Если бейдж Cirrus CI показывает "Repository not found", убедись, что `.cirrus.yml` присутствует в корне репозитория на ветке `android-16`.
+> 📌 **Note**: If the Cirrus CI badge shows "Repository not found", ensure `.cirrus.yml` exists in the repository root on the `android-16` branch.
 
 ---
 
@@ -145,7 +145,7 @@ mka bootimage -j$(nproc --all)      # For testing boot.imgmka bacon -j$(nproc --
 
 ## 🔄 Adapting for Other ROMs
 
-Этот device tree изначально настроен для **Evolution X**, но его можно легко адаптировать для других прошивок на основе AOSP.
+This device tree is configured for **Evolution X** by default, but can be easily adapted for other AOSP-based ROMs.
 ### What to Change:
 
 | File | Evolution X | LineageOS | Pixel Experience | ArrowOS |
@@ -179,7 +179,7 @@ lunch lineage_a30-userdebug
 mka bacon -j$(nproc --all)
 ```
 
-### ⚠️ Important Notes for ROM Compatibility:
+### ⚠️ ROM Compatibility Notes:
 
 | ROM | Compatibility | Notes |
 |-----|---------------|-------|
@@ -189,7 +189,7 @@ mka bacon -j$(nproc --all)
 | **ArrowOS** | ⚠️ Requires changes | Minimal changes needed |
 | **crDroid** | ⚠️ Requires changes | Based on LineageOS |
 
-> 💡 **Tip**: Most changes are in `device.mk` and `AndroidProducts.mk`. The hardware configuration (`BoardConfig.mk`) usually stays the same across AOSP-based ROMs.
+> 💡 **Tip**: Most changes are in `device.mk` and `AndroidProducts.mk`. Hardware configuration (`BoardConfig.mk`) usually stays the same across AOSP-based ROMs.
 
 ---
 

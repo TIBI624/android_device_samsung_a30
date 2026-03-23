@@ -36,8 +36,22 @@ task:
   sync_script:
     - mkdir -p ~/android && cd ~/android
     - repo init -u https://github.com/Evolution-X/manifest.git -b vic
+    # Update repo to latest version to avoid known bugs
+    - cp .repo/repo/repo /usr/bin/repo
+    - chmod a+x /usr/bin/repo
     - mkdir -p .repo/local_manifests
     - cp $CIRRUS_WORKING_DIR/local_manifest.xml .repo/local_manifests/a30.xml
+    # Clean broken Chromium WebView projects that cause "Cannot initialize work tree"
+    - rm -rf external/chromium-webview/prebuilt/arm
+    - rm -rf external/chromium-webview/prebuilt/arm64
+    - rm -rf external/chromium-webview/prebuilt/x86
+    - rm -rf .repo/projects/external/chromium-webview/prebuilt/arm.git
+    - rm -rf .repo/projects/external/chromium-webview/prebuilt/arm64.git
+    - rm -rf .repo/projects/external/chromium-webview/prebuilt/x86.git
+    - rm -rf .repo/project-objects/LineageOS/android_external_chromium-webview_prebuilt_arm.git
+    - rm -rf .repo/project-objects/LineageOS/android_external_chromium-webview_prebuilt_arm64.git
+    - rm -rf .repo/project-objects/LineageOS/android_external_chromium-webview_prebuilt_x86.git
+    # Full sync
     - repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc)
 
   build_script:
