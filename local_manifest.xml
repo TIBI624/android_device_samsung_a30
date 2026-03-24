@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
+  <!-- Remove heavy WebView projects from the main manifest -->
+  <remove-project name="LineageOS/android_external_chromium-webview_prebuilt_arm64" />
+  <remove-project name="LineageOS/android_external_chromium-webview_prebuilt_x86" />
+  <remove-project name="LineageOS/android_external_chromium-webview_prebuilt_arm" />
+
   <!-- Device Tree -->
   <project path="device/samsung/a30"
            name="TIBI624/android_device_samsung_a30"
@@ -12,13 +17,13 @@
            remote="github"
            revision="android-15" />
 
-  <!-- Kernel (Eureka, AOSP-совместимая ветка) -->
+  <!-- Kernel (Eureka, AOSP-compatible branch) -->
   <project path="kernel/samsung/universal7885"
            name="eurekadevelopment/Eureka-Kernel"
            remote="github"
            revision="R15-AOSP" />
 
-  <!-- Vendor blobs для A30 (Android 10) -->
+  <!-- Vendor blobs for A30 (Android 10) -->
   <project path="vendor/samsung/a30"
            name="AndroidBlobs/vendor_samsung_a30"
            remote="github"
